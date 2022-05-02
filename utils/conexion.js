@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const MONGODB_URI = process.env["MONGODB_URI"];
+const {MONGODB_URI} = require('../config');
 
-async function conexionDB() {
+const conexionDB=async()=> {
   try {
     console.log(MONGODB_URI)
     await mongoose.connect(MONGODB_URI);

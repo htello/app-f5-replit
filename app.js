@@ -1,7 +1,7 @@
 const express=require('express');
 const morgan=require('morgan');
 const cors=require('cors');
-const fileUpload=require('express-fileupload');
+
 
 
 const indexRouters =require('./routers/index.routers.js');
@@ -13,10 +13,7 @@ const PORT = process.env['PORT']
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(fileUpload({
-    useTempFiles : true,
-    tempFileDir : '/tmp/'
-}));
+
 
 
 app.use(indexRouters)
